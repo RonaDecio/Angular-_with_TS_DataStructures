@@ -1,0 +1,14 @@
+<div>
+  <h2>Painting List Works!</h2>
+
+  <input type="text" [(ngModel)]="painting" placeholder="Enter painting name" />
+  <button class="btn btn-primary" (click)="addPainting()">Add Painting</button>
+
+  <ul>
+    <li *ngFor="let painting of paintings; let i = index">
+      {{ painting }}
+      <button (click)="removePainting(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
