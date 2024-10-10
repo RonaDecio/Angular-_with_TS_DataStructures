@@ -1,0 +1,15 @@
+<div>
+  <h2>Budget List Works!</h2>
+
+  <input type="text" [(ngModel)]="itemName" placeholder="Enter budget item name" />
+  <input type="number" [(ngModel)]="itemAmount" placeholder="Enter budget amount" />
+  <button class="btn btn-primary" (click)="addBudgetItem()">Add Budget Item</button>
+
+  <ul>
+    <li *ngFor="let item of budgetItems; let i = index">
+      {{ item.name }} - {{ item.amount }}
+      <button (click)="removeBudgetItem(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
