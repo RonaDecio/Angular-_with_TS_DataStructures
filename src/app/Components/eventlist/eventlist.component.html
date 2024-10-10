@@ -1,0 +1,14 @@
+<div>
+  <h2>Event List Works!</h2>
+
+  <input type="text" [(ngModel)]="event" placeholder="Enter event" />
+  <button class="btn btn-primary" (click)="addEvent()">Add Event</button>
+
+  <ul>
+    <li *ngFor="let event of events; let i = index">
+      {{ event }}
+      <button (click)="removeEvent(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
