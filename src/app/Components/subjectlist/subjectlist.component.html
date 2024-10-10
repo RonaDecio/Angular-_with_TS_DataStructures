@@ -1,0 +1,40 @@
+<div class="subject-form">
+  <h2>Add Subject</h2>
+  <form (submit)="addSubject()">
+    <label for="id">ID:</label>
+    <input type="text" id="id" [(ngModel)]="id" name="id" required />
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required />
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" [(ngModel)]="description" name="description" required />
+    <br><br>
+
+    <button type="submit" class="btn btn-primary">Add Subject</button>
+  </form>
+</div>
+
+<div class="subject-list">
+  <h2>Subject List</h2>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let subject of subjects; let i = index">
+      <td>{{ subject.id }}</td>
+      <td>{{ subject.name }}</td>
+      <td>{{ subject.description }}</td>
+      <td>
+        <button (click)="removeSubject(i)" class="remove-btn">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
