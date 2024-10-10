@@ -1,0 +1,45 @@
+<div class="contact-form">
+  <h2>Add Contact</h2>
+  <form (submit)="addContact()">
+    <label for="id">ID:</label>
+    <input type="text" id="id" [(ngModel)]="id" name="id" required />
+
+    <label for="name">Contact Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required />
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" [(ngModel)]="phone" name="phone" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email" required />
+
+    <br><br><button type="submit" class="btn btn-primary">Add Contact</button>
+  </form>
+</div>
+
+<div class="contact-list">
+  <h2>Phone Contacts</h2>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contacts; let i = index">
+      <td>{{ contact.id }}</td>
+      <td>{{ contact.name }}</td>
+      <td>{{ contact.phone }}</td>
+      <td>{{ contact.email }}</td>
+      <td>
+        <button (click)="removeContact(i)" class="remove-btn">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
