@@ -1,0 +1,33 @@
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.list-button {
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.list-button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .list-button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
