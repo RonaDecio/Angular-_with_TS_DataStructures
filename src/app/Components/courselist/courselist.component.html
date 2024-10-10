@@ -1,0 +1,39 @@
+<div class="course-form">
+  <h2>Add Course</h2>
+  <form (submit)="addCourse()">
+    <label for="code">Course Code:</label>
+    <input type="text" id="code" [(ngModel)]="code" name="code" required />
+
+    <label for="title">Course Title:</label>
+    <input type="text" id="title" [(ngModel)]="title" name="title" required />
+
+    <label for="units">Units:</label>
+    <input type="number" id="units" [(ngModel)]="units" name="units" required /><br><br>
+
+    <button type="submit" class="btn btn-primary">Add Course</button>
+  </form>
+</div>
+
+<div class="course-list">
+  <h2>Course List</h2>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Units</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let course of courses; let i = index">
+      <td>{{ course.code }}</td>
+      <td>{{ course.title }}</td>
+      <td>{{ course.units }}</td>
+      <td>
+        <button (click)="removeCourse(i)" class="remove-btn">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
