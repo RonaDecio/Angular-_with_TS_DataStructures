@@ -1,0 +1,39 @@
+<div class="animal-form">
+  <h2>Add Animal</h2>
+  <form (submit)="addAnimal()">
+    <label for="id">ID:</label>
+    <input type="text" id="id" [(ngModel)]="id" name="id" required />
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required />
+
+    <label for="species">Species:</label>
+    <input type="text" id="species" [(ngModel)]="species" name="species" required /><br><br>
+
+    <button type="submit" class="btn btn-primary">Add Animal</button>
+  </form>
+</div>
+
+<div class="animal-list">
+  <h2>Animals in Zoo</h2>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Species</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let animal of animals; let i = index">
+      <td>{{ animal.id }}</td>
+      <td>{{ animal.name }}</td>
+      <td>{{ animal.species }}</td>
+      <td>
+        <button (click)="removeAnimal(i)" class="remove-btn">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
