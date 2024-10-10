@@ -1,0 +1,14 @@
+<div>
+  <h2>TV Show List Works!</h2>
+
+  <input type="text" [(ngModel)]="show" placeholder="Enter TV show title" />
+  <button class="btn btn-primary" (click)="addShow()">Add TV Show</button>
+
+  <ul>
+    <li *ngFor="let show of shows; let i = index">
+      {{ show }}
+      <button (click)="removeShow(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
