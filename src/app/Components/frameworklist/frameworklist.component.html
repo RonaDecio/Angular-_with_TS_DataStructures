@@ -1,0 +1,14 @@
+<div>
+  <h2>Frameworks List Works!</h2>
+
+  <input type="text" [(ngModel)]="framework" placeholder="Enter framework name" />
+  <button class="btn btn-primary" (click)="addFramework()">Add Framework</button>
+
+  <ul>
+    <li *ngFor="let framework of frameworks; let i = index">
+      {{ framework }}
+      <button (click)="removeFramework(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
