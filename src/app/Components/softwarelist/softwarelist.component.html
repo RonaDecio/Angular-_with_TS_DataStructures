@@ -1,0 +1,39 @@
+<div class="software-form">
+  <h2>Add Software</h2>
+  <form (submit)="addSoftware()">
+    <label for="name">Software Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required />
+
+    <label for="version">Version:</label>
+    <input type="text" id="version" [(ngModel)]="version" name="version" required />
+
+    <label for="license">License Type:</label>
+    <input type="text" id="license" [(ngModel)]="license" name="license" required />
+
+    <br><br><button type="submit" class="btn btn-primary">Add Software</button>
+  </form>
+</div>
+
+<div class="software-list">
+  <h2>Installed Software</h2>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+      <th>License</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let software of softwareList; let i = index">
+      <td>{{ software.name }}</td>
+      <td>{{ software.version }}</td>
+      <td>{{ software.license }}</td>
+      <td>
+        <button (click)="removeSoftware(i)" class="remove-btn">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
