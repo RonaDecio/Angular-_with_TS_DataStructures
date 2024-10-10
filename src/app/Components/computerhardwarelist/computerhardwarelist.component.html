@@ -1,0 +1,14 @@
+<div>
+  <h2>Computer Hardware List Works!</h2>
+
+  <input type="text" [(ngModel)]="hardware" placeholder="Enter computer component" />
+  <button class="btn btn-primary" (click)="addHardware()">Add Component</button>
+
+  <ul>
+    <li *ngFor="let item of hardwareItems; let i = index">
+      {{ item }}
+      <button (click)="removeHardware(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
