@@ -1,0 +1,14 @@
+<div>
+  <h2>Building List Works!</h2>
+
+  <input type="text" [(ngModel)]="building" placeholder="Enter building name" />
+  <button class="btn btn-primary" (click)="addBuilding()">Add Building</button>
+
+  <ul>
+    <li *ngFor="let building of buildings; let i = index">
+      {{ building }}
+      <button (click)="removeBuilding(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
