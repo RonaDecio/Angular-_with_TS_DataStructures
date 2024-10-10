@@ -1,0 +1,44 @@
+<div class="city-form">
+  <h2>Add City</h2>
+  <form (submit)="addCity()">
+    <label for="name">City Name:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required />
+
+    <label for="country">Country:</label>
+    <input type="text" id="country" [(ngModel)]="country" name="country" required />
+
+    <label for="population">Population:</label>
+    <input type="number" id="population" [(ngModel)]="population" name="population" required />
+
+    <label for="region">Region:</label>
+    <input type="text" id="region" [(ngModel)]="region" name="region" required /><br><br>
+
+    <button type="submit" class="btn btn-primary">Add City</button>
+  </form>
+</div>
+
+<div class="city-list">
+  <h2>City List</h2>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Population</th>
+      <th>Region</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let city of cities; let i = index">
+      <td>{{ city.name }}</td>
+      <td>{{ city.country }}</td>
+      <td>{{ city.population }}</td>
+      <td>{{ city.region }}</td>
+      <td>
+        <button (click)="removeCity(i)" class="remove-btn">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
