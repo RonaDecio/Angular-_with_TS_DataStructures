@@ -1,0 +1,13 @@
+<div>
+  <h2>Podcast List Works!</h2>
+
+  <input type="text" [(ngModel)]="podcast" placeholder="Enter podcast episode title" />
+  <button class="btn btn-primary" (click)="addPodcast()">Add Podcast</button>
+
+  <ul>
+    <li *ngFor="let podcast of podcasts; let i = index">
+      {{ podcast }}
+      <button (click)="removePodcast(i)">Remove</button>
+    </li>
+  </ul>
+</div>
