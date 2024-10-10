@@ -1,0 +1,14 @@
+<div>
+  <h2>Meal Plan List Works!</h2>
+
+  <input type="text" [(ngModel)]="meal" placeholder="Enter meal details" />
+  <button class="btn btn-primary" (click)="addMeal()">Add Meal</button>
+
+  <ul>
+    <li *ngFor="let meal of meals; let i = index">
+      {{ meal }}
+      <button (click)="removeMeal(i)">Remove</button>
+    </li>
+  </ul>
+</div>
+
